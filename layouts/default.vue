@@ -1,7 +1,7 @@
 <template>
   <div v-if="loaded">
     <admin v-if="this.$route.fullPath.startsWith('/admin')"></admin>
-    <public else></public>
+    <public v-else></public>
   </div>
 </template>
 
@@ -18,8 +18,6 @@ export default {
         return{
             loaded:false
         };
-    },
-    created(){
     },
     mounted() {
         const self = this;

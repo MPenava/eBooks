@@ -1,7 +1,7 @@
 <template>
-    <v-app app>
-        <h1>Admin page</h1>
-    </v-app>
+  <div>
+    <h1>About Us</h1>
+  </div>
 </template>
 
 <script>

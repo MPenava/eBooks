@@ -1,31 +1,24 @@
 <template>
-  <div>
-    <v-container>
-        <v-row>
-          <template v-for="n in 4" :key="n">
-            <v-col
-              class="mt-2"
-              cols="12"
-            >
-              <strong>Category {{ n }}</strong>
-            </v-col>
-
-            <v-col
-              v-for="j in 6"
-              :key="`${n}${j}`"
-              cols="6"
-              md="2"
-            >
-              <v-sheet height="150"></v-sheet>
-            </v-col>
-          </template>
-        </v-row>
-      </v-container>
+  <div class="d-flex justify-center">
+    <img width="500" src="~/assets/images/book-illustration.png" />
+  </div>
+  <div class="d-flex justify-center">
+    <p class="text-blue-grey-darken-3 text-h1 font-italic">
+      eBooks
+    </p>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  data(){
+    return{
+    };
+  }
+};
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+  
+  
+</style>
