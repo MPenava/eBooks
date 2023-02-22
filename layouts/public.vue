@@ -25,6 +25,7 @@
           v-for="item in links"
           :key="item"
           :value="item"
+          :to="item.path"
           active-color="primary"
         >
           <template v-slot:prepend>
