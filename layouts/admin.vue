@@ -2,7 +2,7 @@
   <v-app app>
     <!--Navigation-->
     <v-navigation-drawer v-model="drawer" color="grey-darken-3">
-        <v-list>
+      <v-list>
         <v-list-item
           v-for="item in links"
           :key="item"
@@ -23,17 +23,16 @@
 
       <v-toolbar-title>
         <v-icon
-            variant="text"
-            icon="mdi-book-open-page-variant-outline"
-          ></v-icon>
-          <span class="font-weight-bold"> eBooks - Administration</span>
+          variant="text"
+          icon="mdi-book-open-page-variant-outline"
+        ></v-icon>
+        <span class="font-weight-bold"> eBooks - Administration</span>
       </v-toolbar-title>
     </v-app-bar>
 
     <v-main>
-      <Nuxt/>
+      <NuxtPage />
     </v-main>
-
   </v-app>
 </template>
 
