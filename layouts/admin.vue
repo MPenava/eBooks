@@ -43,17 +43,18 @@
           </v-btn>
         </template>
         <v-list>
-          <v-list-item
-            v-for="item in menuItems"
-            :key="item"
-            :value="item"
-            :to="item.path"
-          >
+          <v-list-item to="/admin/registration">
             <template v-slot:prepend>
-              <v-icon :icon="item.icon"></v-icon>
+              <v-icon icon="mdi-account-plus"></v-icon>
             </template>
+            <v-list-item-title>Novi korisnik</v-list-item-title>
+          </v-list-item>
 
-            <v-list-item-title>{{ item.text }}</v-list-item-title>
+          <v-list-item @click="logout()">
+            <template v-slot:prepend>
+              <v-icon icon="mdi-logout"></v-icon>
+            </template>
+            <v-list-item-title>Odjava</v-list-item-title>
           </v-list-item>
         </v-list>
       </v-menu>
@@ -78,9 +79,15 @@ export default {
     ],
     menuItems: [
       { text: "Novi korisnik", path: "/admin/registration", icon: "mdi-account-plus" },
-      { text: "Odjava", path: "/logout", icon: "mdi-logout" },
+      { text: "Odjava", icon: "mdi-logout" },
     ],
   }),
+  methods: {
+    logout(){
+      signOutUser();
+      this.$router.push('/');
+    }
+  }
 };
 </script>
 
