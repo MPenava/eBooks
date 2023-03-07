@@ -13,7 +13,7 @@
             <v-icon :icon="item.icon"></v-icon>
           </template>
 
-          <v-list-item-title v-text="item.text"></v-list-item-title>
+          <v-list-item-title>{{ item.text }}</v-list-item-title>
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
@@ -28,10 +28,41 @@
         ></v-icon>
         <span class="font-weight-bold"> eBooks - Administration</span>
       </v-toolbar-title>
+
+      <v-spacer></v-spacer>
+
+      <p class="font-weight-bold">Marko Penava</p>
+
+      <!-- <v-btn icon>
+        <v-icon>mdi-dots-vertical</v-icon>
+      </v-btn> -->
+      <v-menu>
+        <template v-slot:activator="{ props }">
+          <v-btn v-bind="props">
+            <v-icon>mdi-dots-vertical</v-icon>
+          </v-btn>
+        </template>
+        <v-list>
+          <v-list-item
+            v-for="item in menuItems"
+            :key="item"
+            :value="item"
+            :to="item.path"
+          >
+            <template v-slot:prepend>
+              <v-icon :icon="item.icon"></v-icon>
+            </template>
+
+            <v-list-item-title>{{ item.text }}</v-list-item-title>
+          </v-list-item>
+        </v-list>
+      </v-menu>
     </v-app-bar>
 
     <v-main>
-      <NuxtPage />
+      <v-container>
+        <NuxtPage />
+      </v-container>
     </v-main>
   </v-app>
 </template>
@@ -44,6 +75,10 @@ export default {
       { text: "Home", path: "/admin", icon: "mdi-home" },
       { text: "Books", path: "/admin/books", icon: "mdi-bookshelf" },
       { text: "Users", path: "/admin/users", icon: "mdi-account-group" },
+    ],
+    menuItems: [
+      { text: "Novi korisnik", path: "/admin/registration", icon: "mdi-account-plus" },
+      { text: "Odjava", path: "/logout", icon: "mdi-logout" },
     ],
   }),
 };

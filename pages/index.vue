@@ -5,9 +5,6 @@
   <div class="d-flex justify-center">
     <p class="text-blue-grey-darken-3 text-h1 font-italic">eBooks</p>
   </div>
-  <div>
-    <v-btn>CLick Me</v-btn>
-  </div>
 </template>
 
 <script setup>
