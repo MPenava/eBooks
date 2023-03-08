@@ -88,6 +88,7 @@ export default {
       }else{
           try {
             createUser(this.email, this.password);
+            writeUserData(this.fullname, this.email);
             this.successMessage = 'You have successfully registered.';
           } catch (error) {
             this.errorMessage = error;

@@ -22,7 +22,7 @@
     // const credentials = await signOutUser();
     // console.log("Result: ", result);
 
-    //writeUserData("Marko Penava", "markopenava@gmail.com")
+    //writeUserData("Marko Penava", "markopenava@gmail.com");
   });
 </script>
 
