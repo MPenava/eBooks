@@ -6,6 +6,7 @@
 </template>
 
 <script>
+
 import Admin from '~/layouts/admin.vue';
 import Public from '~/layouts/public.vue';
 
