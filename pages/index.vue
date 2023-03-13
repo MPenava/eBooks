@@ -23,6 +23,14 @@
     // console.log("Result: ", result);
 
     //writeUserData("Marko Penava", "markopenava@gmail.com");
+    
+    // const email="asd@asd.co";
+    // const password="123456";
+    // const credentials = await signInUser(email, password);
+    // console.log("Credentials: ", credentials);
+
+    // signOutUser();
+    // initUser();
   });
 </script>
 

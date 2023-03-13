@@ -70,7 +70,7 @@
             icon="mdi-book-open-page-variant-outline"
           ></v-icon>
           <strong class="text-light"
-            >eBooks - {{ new Date().getFullYear() }}</strong
+            > eBooks - {{ new Date().getFullYear() }}</strong
           >
         </v-col>
       </v-row>
@@ -86,7 +86,7 @@ export default {
       { text: "Home", path: "/", icon: "mdi-home" },
       { text: "Books", path: "/books", icon: 'mdi-bookshelf'},
       { text: "About Us", path: "/about-us", icon: 'mdi-information-variant' },
-      { text: "Administracija", path: "/admin", icon: 'mdi-security' },
+      { text: "Administracija", path: "/login", icon: 'mdi-security' },
     ],
   }),
 };
