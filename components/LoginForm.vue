@@ -40,17 +40,17 @@ export default {
   },
   methods: {
     login() {
-      console.log(this.email + " - " + this.password);
       if (this.email === "" || this.password === "") {
         this.errorMessage = "You must insert all data!";
       } else if (this.password.length < 6) {
         this.errorMessage = "Password must have 6 chars!";
       } else {
         signInUser(this.email, this.password);
-        if(initUser()){
+        const currentUser = useFirebaseUser();
+        if(currentUser){
           this.$router.push('/admin');
         }else{
-          this.$router.push('/login');
+          this.errorMessage = "You are not registrated!";
         }
       }
     },

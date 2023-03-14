@@ -8,30 +8,25 @@
 </template>
 
 <script setup>
-  onMounted(async() =>{
-    // const email="penavamarko123@gmail.com";
-    // const password="123456123";
-    // const credentials = await createUser(email, password);
-    // console.log("Credentials: ", credentials);
-
-    // const email="penavamarko123@gmail.com";
-    // const password="123456123";
-    // const credentials = await signInUser(email, password);
-    // console.log("Credentials: ", credentials);
-
-    // const credentials = await signOutUser();
-    // console.log("Result: ", result);
-
-    //writeUserData("Marko Penava", "markopenava@gmail.com");
-    
-    // const email="asd@asd.co";
-    // const password="123456";
-    // const credentials = await signInUser(email, password);
-    // console.log("Credentials: ", credentials);
-
-    // signOutUser();
-    // initUser();
-  });
+onMounted(async () => {
+  // const email="penavamarko123@gmail.com";
+  // const password="123456123";
+  // const credentials = await createUser(email, password);
+  // console.log("Credentials: ", credentials);
+  // const email="penavamarko123@gmail.com";
+  // const password="123456123";
+  // const credentials = await signInUser(email, password);
+  // console.log("Credentials: ", credentials);
+  // const credentials = await signOutUser();
+  // console.log("Result: ", result);
+  //writeUserData("Marko Penava", "markopenava@gmail.com");
+  // const email="asd@asd.co";
+  // const password="123456";
+  // const credentials = await signInUser(email, password);
+  // console.log("Credentials: ", credentials);
+  // signOutUser();
+  // initUser();
+});
 </script>
 
 <style lang="scss" scoped></style>
