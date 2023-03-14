@@ -6,9 +6,11 @@ import {
 } from "firebase/auth";
 
 
+import { getDatabase, ref, set, onValue} from "firebase/database";
 
-export const createUser = async (email, password) => {
+export const createUser = async (email: string, password: string, fullname: string) => {
   const auth = getAuth();
+  const db = getDatabase();
 
   const credentials = await createUserWithEmailAndPassword(
     auth,
@@ -18,10 +20,17 @@ export const createUser = async (email, password) => {
     const errorCode = error.code;
     const errorMessage = error.message;
   });
+
+  set(ref(db, 'users/' + auth.currentUser?.uid), {
+    fullname: fullname,
+    email: email,
+  });
+
+
   return credentials;
 };
 
-export const signInUser = async (email, password) => {
+export const signInUser = async (email:string, password:string) => {
   const auth = getAuth();
 
   const credentials = await signInWithEmailAndPassword(auth, email, password)
@@ -38,9 +47,9 @@ export const initUser = async () => {
   firebaseUser.value = auth.currentUser;
   onAuthStateChanged(auth, (user) => {
     if (user) {
-      // console.log("Auth changed: ", user);
+      console.log("Auth changed: ", user.uid);
     } else {
-      // console.log("Auth changed: ", user);
+      console.log("Auth changed: ", user);
     }
 
     firebaseUser.value = user;

@@ -87,8 +87,7 @@ export default {
         this.errorMessage = 'Passwords are not the same!';
       }else{
           try {
-            createUser(this.email, this.password);
-            writeUserData(this.fullname, this.email);
+            createUser(this.email, this.password, this.fullname,);
             this.successMessage = 'You have successfully registered.';
           } catch (error) {
             this.errorMessage = error;
