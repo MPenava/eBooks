@@ -1,11 +1,7 @@
 <template>
   <v-container>
     <HeadingView title="Books" />
-    <BooksTable 
-        :data="data"
-        @edit="editBook"
-        @delete="deleteBook"
-    />
+    <BooksTable :data="this.books" @edit="editBook" @delete="deleteBook" />
   </v-container>
 </template>
 
@@ -23,19 +19,15 @@ export default {
   },
   data() {
     return {
-      data: [
-        {
-          title: "title 1",
-          author: "author 1",
-          description: "description 1",
-        },
-        {
-          title: "title 2",
-          author: "author 2",
-          description: "description 2",
-        },
-      ],
+      books: []
     };
+  },
+  mounted() {
+    getBooks()
+      .then((result) => {
+        this.books = result;
+      })
+      .catch(console.error.bind(console));
   },
   methods:{
     editBook(){

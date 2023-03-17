@@ -23,15 +23,16 @@ export default {
   },
   data() {
     return {
-      books: null,
+      books: [],
     };
   },
-  mounted(){
-    const { data } = useFetch("api/get-books");
-    this.books = data;
-    console.log(data);
-  }
-
+  mounted() {
+    getBooks()
+      .then((result) => {
+        this.books = result;
+      })
+      .catch(console.error.bind(console));
+  },
 };
 </script>
 

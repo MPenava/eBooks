@@ -16,13 +16,22 @@
         >
         Read Book
       </v-btn>
+      <v-btn
+        variant="outlined"
+        color="error"
+        prepend-icon="mdi-download"
+        :href="pdf"
+        target="blank"
+        >
+        Download
+      </v-btn>
     </v-card-actions>
   </v-card>
 </template>
 
 <script>
 export default {
-    props: ["title", "author", "description", "image","pdf"],
+    props: ["title", "author", "description", "image","pdf",]
 };
 </script>
 
