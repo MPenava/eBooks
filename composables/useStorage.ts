@@ -5,13 +5,13 @@ export const uploadFile = async (path: any, file: any) => {
   const fullPath = path + "/" + file[0].name;
   const storageRef = ref(storage, fullPath);
 
-  uploadBytes(storageRef, file[0]).then((snapshot) => {
+  await uploadBytes(storageRef, file[0]).then((snapshot) => {
     console.log("Uploaded a blob or file!");
   });
 };
 
-//Radi
-export const getPathOfFile = async (path: any, file: any)=> {
+// Radi
+export const getPathOfFile = async (path: any, file: any) => {
   const fullPath = path + "/" + file[0].name;
   const storageRef = ref(storage, fullPath);
 

@@ -96,40 +96,26 @@ export default {
     author: "",
     description: "",
     image: "",
-    imageUrl: "",
     pdf: "",
   }),
   methods: {
     submitData() {
-      // if(this.title === "" || this.author === "" || this.description === "" ){
-      //   this.errorMessage = "Molimo unesite sve podatke!"
-      // }else if(this.image === "" || this.pdf === ""){
-      //   this.errorMessage = "Slika ili dokument nisu dodani!"
-      // }else{
-      // }
-
-      // uploadFile("images", this.image)
-      //   .then((result) => {
-      //     console.log("Rez:", result);
-      //   })
-      //   .catch(console.error.bind(console));
-      var imageUrl;
-      getPathOfFile("images", this.image)
-        .then((result) => {
-          imageUrl =  result;
-        })
-        .catch(console.error.bind(console));
-      console.log(imageUrl);
-
-      //Radi
-      // var bookData = {
-      //   title: this.title,
-      //   author: this.author,
-      //   description: this.description
-      // }
-      // addBookToDb(bookData);
-      // this.dialog = false;
-      // this.successMessage = "Uploading successfully";
+      if (this.title === "" || this.author === "" || this.description === "") {
+        this.errorMessage = "Molimo unesite sve podatke!";
+      } else if (this.image === "" || this.pdf === "") {
+        this.errorMessage = "Slika ili dokument nisu dodani!";
+      } else {
+        addBookToDb(
+          this.title,
+          this.author,
+          this.description,
+          this.image,
+          this.pdf
+        ).then((result) => {
+          this.dialog = false;
+          this.successMessage = "Successfully added!";
+        });
+      }
     },
   },
 };
