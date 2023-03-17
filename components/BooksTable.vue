@@ -26,7 +26,7 @@
             color="error"
             size="small"
             icon="mdi-delete"
-            @click="$emit('delete', id)"
+            @click="$emit('delete', d.id)"
           ></v-btn>
         </td>
       </tr>

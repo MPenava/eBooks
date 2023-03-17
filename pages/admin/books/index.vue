@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <HeadingView title="Books" />
-    <BooksTable :data="this.books" @edit="editBook" @delete="deleteBook" />
+    <BooksTable :data="this.books" @edit="editBook" @delete="del" />
   </v-container>
 </template>
 
@@ -33,9 +33,11 @@ export default {
     editBook(){
         console.log("Uređivanje");
     },
-    deleteBook(){
-        console.log("Brisanje");
+    del(bookId){
+      deleteBook(bookId);
+      router.reload();
     }
+    
   }
 };
 </script>

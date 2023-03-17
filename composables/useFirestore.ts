@@ -59,3 +59,7 @@ export const addBookToDb = async (
   });
   console.log("Document written to firestore: ", );
 };
+
+export const deleteBook = async (bookId: any) => {
+  await deleteDoc(doc(db, "books", bookId));
+}
