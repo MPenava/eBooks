@@ -38,6 +38,12 @@ export default {
       errorMessage: null,
     };
   },
+  mounted(){
+    if(isUserAuth()){
+      console.log("User: true");
+      this.$router.push('/admin');
+    }
+  },
   methods: {
     login() {
       if (this.email === "" || this.password === "") {
@@ -47,14 +53,14 @@ export default {
       } else {
         signInUser(this.email, this.password);
         const currentUser = useFirebaseUser();
-        if(currentUser){
+        if(isUserAuth()){
           this.$router.push('/admin');
         }else{
           this.errorMessage = "You are not registrated!";
         }
       }
     },
-  },
+  }
 };
 </script>
 
