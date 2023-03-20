@@ -13,7 +13,7 @@
         prepend-icon="mdi-book-open-variant"
         :href="pdf"
         target="blank"
-        >
+      >
         Read Book
       </v-btn>
       <v-btn
@@ -21,7 +21,7 @@
         color="error"
         prepend-icon="mdi-download"
         @click="$emit('download', pdf)"
-        >
+      >
         Download
       </v-btn>
     </v-card-actions>
@@ -30,17 +30,41 @@
 
 <script>
 export default {
-    props: ["title", "author", "description", "image","pdf"],
-    emits: ["download-book"],
-    computed: {
-      title() {
-        return this.title.length > 24 ? this.title.substring(0,24)+".." : this.title;
-      },
-      description() {
-        return this.description.length > 35 ? this.description.substring(0,35)+".." : this.description;
-      }
-    }
+  // props: {
+  //   title: {
+  //     type: String,
+  //     validator(value) {
+  //       return value.length > 24 ? value.substring(0,24)+".." : value;
+  //     }
+  //   },
+  //   author: String,
+  //   description: {
+  //     type: String,
+  //   },
+  //   image: String,
+  //   pdf: String
 
+  // },
+  props: ["initialTitle", "author", "initialDescription", "image", "pdf"],
+  emits: ["download-book"],
+  data(){
+    return {
+      title: this.initialTitle,
+      description: this.initialDescription
+    };
+  },
+  computed: {
+    title() {
+      return this.title.length > 24
+        ? this.title.substring(0, 24) + ".."
+        : this.title;
+    },
+    description() {
+      return this.description.length > 35
+        ? this.description.substring(0, 35) + ".."
+        : this.description;
+    },
+  },
 };
 </script>
 
