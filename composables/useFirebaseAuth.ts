@@ -61,3 +61,12 @@ export const signOutUser = async () => {
   const result = await auth.signOut();
   console.log("Sign out: ", result);
 }
+
+export const isUserAuth =  () => {
+  const auth = getAuth();
+    if (auth.currentUser) {
+      return true;
+    } else {
+      return false;
+    }
+};

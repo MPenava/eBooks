@@ -35,7 +35,6 @@ export default {
     },
     del(bookId){
       deleteBook(bookId);
-      router.reload();
     }
     
   }

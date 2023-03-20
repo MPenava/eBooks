@@ -20,3 +20,25 @@ export const getPathOfFile = async (path: any, file: any) => {
   });
   return url;
 };
+
+export const download = async (path:any) => {
+  const httpsReference = ref(storage, path);
+
+  getDownloadURL(httpsReference)
+  .then((url) => {
+    // `url` is the download URL for 'images/stars.jpg'
+
+    // This can be downloaded directly:
+    const xhr = new XMLHttpRequest();
+    xhr.responseType = 'blob';
+    xhr.onload = (event) => {
+      const blob = xhr.response;
+    };
+    xhr.open('GET', url);
+    xhr.send();
+
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+}

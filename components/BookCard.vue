@@ -20,8 +20,7 @@
         variant="outlined"
         color="error"
         prepend-icon="mdi-download"
-        :href="pdf"
-        target="blank"
+        @click="$emit('download', pdf)"
         >
         Download
       </v-btn>
@@ -31,7 +30,17 @@
 
 <script>
 export default {
-    props: ["title", "author", "description", "image","pdf",]
+    props: ["title", "author", "description", "image","pdf"],
+    emits: ["download-book"],
+    computed: {
+      title() {
+        return this.title.length > 24 ? this.title.substring(0,24)+".." : this.title;
+      },
+      description() {
+        return this.description.length > 35 ? this.description.substring(0,35)+".." : this.description;
+      }
+    }
+
 };
 </script>
 

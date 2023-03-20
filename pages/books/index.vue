@@ -9,6 +9,7 @@
           :description="book.description"
           :image="book.image"
           :pdf="book.pdf"
+          @download="downloadBook"
         ></BookCard>
       </v-col>
     </v-row>
@@ -33,6 +34,11 @@ export default {
       })
       .catch(console.error.bind(console));
   },
+  methods:{
+    downloadBook(pdfUrl){
+      download(pdfUrl);
+    }
+  }
 };
 </script>
 
